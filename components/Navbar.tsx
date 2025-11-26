@@ -24,23 +24,25 @@ const Navbar = () => {
   return (
     <nav className='flex justify-between p-4 border-b'>
       <div className='flex gap-2 items-center cursor-pointer'>
-         <Menu/>
+         <Button className='cursor-pointer' variant={'ghost'}>
+            <Menu className='size-6'/>
+         </Button>
          <Link href={"/"}>
             <Image src={'/logo.avif'} alt='Live Hindustan' width={200} height={200} className='ml-4 cursor-pointer'/>
          </Link>
       </div>
       <div className='flex flex-row gap-8 p-2 justify-around'>
-         <Link href={"/photos"} className='border-r border-gray-500 px-4 flex text-red-500 gap-2  items-center'>
-            <ImageIcon color='#ff0000'/>
+         <Link href={"/photos"} className='border-r border-gray-500 px-4 flex text-red-700 gap-2  items-center'>
+            <ImageIcon color='#c10007'/>
             <p>Image</p>
          </Link>
-         <Link href={'/videos'} className='border-r border-gray-500 px-4 flex text-red-500 gap-2  items-center'>
-            <VideoIcon color='#ff0000'/>
+         <Link href={'/videos'} className='border-r border-gray-500 px-4 flex text-red-700 gap-2  items-center'>
+            <VideoIcon color='#c10007'/>
             <p>Video</p>
          </Link>
-         <div className='border-r border-gray-500 px-4 flex  text-red-500 gap-4  items-center'>
+         <div className='border-r border-gray-500 px-4 flex  text-red-700 gap-4  items-center'>
             <div className='flex gap-1 items-center'>
-               <MapPin color='#ff0000'/>
+               <MapPin color='#c10007'/>
                <p>Select City</p>
             </div>
             <Select>
@@ -54,14 +56,14 @@ const Navbar = () => {
                </SelectContent>
             </Select>
          </div>
-         <div className='border-r border-gray-500 px-4 flex text-red-500 gap-2  items-center'> 
-            <Newspaper color='#ff0000'/>
+         <div className='border-r border-gray-500 px-4 cursor-pointer flex text-red-700 gap-2  items-center'> 
+            <Newspaper color='#c10007'/>
             <p>E-paper</p>
          </div>
         {isSignedIn ? <UserButton/> : 
          <SignInButton mode='modal'>
-         <div className='border-r border-gray-500 px-4 flex text-red-500 gap-2  items-center cursor-pointer'>
-            <User color='#ff0000'/>
+         <div className='border-r border-gray-500 px-4 flex text-red-700 gap-2  items-center cursor-pointer'>
+            <User color='#c10007'/>
             <p>Sign in</p>
          </div>
          </SignInButton>}
@@ -70,13 +72,13 @@ const Navbar = () => {
             <Search color='#6a7282' />
          </div>
            </div>
-      <div className='cursor-pointer p-2'>
+      <div className='cursor-pointer p-2 '>
         { theme === 'dark' ?   
          <Button variant={'ghost'} onClick={() => setTheme("light")}>
-            <Sun color='#ff0000' className='size-6'/>
+            <Sun color='#c10007' className='size-6'/>
          </Button> :
         <Button variant={'ghost'} onClick={() => setTheme("dark")}>
-            <Moon color='#ff0000' className='size-6'/>
+            <Moon color='#c10007' className='size-6'/>
          </Button>}
       </div> 
     </nav>
