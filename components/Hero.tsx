@@ -51,7 +51,7 @@ const Hero = () => {
           <Link
             key={trend.href}
             href={`/tags/${trend.href}`}
-            className="border text-md font-semibold border-red-700 py-2 px-4 rounded-full shrink-0"
+            className="border text-md font-semibold hover:bg-red-800 transition-all duration-300 hover:scale-105 border-red-700 py-2 px-4 rounded-full shrink-0"
           >
             {trend.name}
           </Link>

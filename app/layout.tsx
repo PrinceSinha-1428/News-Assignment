@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 
 const geistSans = Geist({
@@ -42,6 +43,7 @@ export default function RootLayout({
                     <main>
                         {children}
                     </main>
+                    <Footer/>
           </ThemeProvider>
       </body>
     </html>
