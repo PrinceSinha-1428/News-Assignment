@@ -22,7 +22,7 @@ export const CITIES = [
   "Jamshedpur",
   "Jodhpur",
   "Kanpur",
-  "Kalyan‑Dombivali",
+  "Kalyan Dombivali",
   "Kochi",
   "Kolhapur",
   "Kolkata",
@@ -47,7 +47,7 @@ export const CITIES = [
   "Thiruvananthapuram",
   "Tiruchirappalli",
   "Vadodara",
-  "Vasai‑Virar",
+  "Vasai Virar",
   "Vijayawada",
   "Visakhapatnam",
 ];
@@ -67,4 +67,29 @@ export const HeaderItems = [
   { href: "/lifestyle", name: "Lifestyle"},
   { href: "/auto", name: "Auto"},
   { href: "/gadgets", name: "Gadgets"},
+]
+export const SidebarItems = [
+  { href: "/e-paper", name: "E-paper"},
+  { href: "/education", name: "Education"},
+  { href: "/photos", name: "Photo"},
+  { href: "/videos", name: "Videos"},
+  { href: "/cricket", name: "Cricket"},
+  { href: "/entertainment", name: "Entertainment"},
+  { href: "/business", name: "Business"},
+  { href: "/career", name: "Career"},
+  { href: "/foreign", name: "Foreign"},
+  { href: "/astrology", name: "Religion"},
+  { href: "/horoscope", name: "Horoscope"},
+  { href: "/lifestyle", name: "Lifestyle"},
+  { href: "/auto", name: "Auto"},
+  { href: "/gadgets", name: "Gadgets"},
+]
+
+export const Trending = [
+  {href: "/delhi-bomb-blast", name: "Delhi Bomb Blast"},
+  {href: "/artcile-240", name: "Article 240"},
+  {href: "/bigboss", name: "Big Boss"},
+  {href: "/weather", name: "Weather"},
+  {href: "/sir", name: "SIR"},
+  {href: "/share-market", name: "Share Market"},
 ]
