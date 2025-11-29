@@ -1,9 +1,10 @@
+import Hero from '@/components/Hero';
 import React from 'react';
 
 const Cricket = () => {
   return (
     <div>
-      cricket
+      <Hero/>
     </div>
   );
 }

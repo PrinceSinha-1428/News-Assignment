@@ -1,10 +1,11 @@
 'use client';
 
-import  { useEffect, useState } from 'react';
-import Spinner from './Spinner';
+import  { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import Link from 'next/link';
 import NewsCard from './NewsCard';
 import { Trending } from '@/constants';
+import Spinner from './Spinner';
+import { useParams } from 'next/navigation';
 
 export interface NewsArticle {
   source: {
@@ -18,10 +19,15 @@ export interface NewsArticle {
   urlToImage: string | null;
   publishedAt: string; 
   content: string | null;
+
 }
 
 
+
+
 const Hero = () => {
+
+
 
    const [article, setArticle] = useState<NewsArticle[] | []>([]);
 
@@ -35,8 +41,7 @@ const Hero = () => {
       fetchNews();
    },[])
 
-   const articleLength = article.length;
-   console.log(articleLength)
+   const articleLength = article?.length;
 
   return (
    <div className="p-4">
@@ -60,7 +65,7 @@ const Hero = () => {
 
       <div className="flex flex-col lg:flex-row gap-4">
         <div className="flex flex-col w-full gap-4 lg:w-1/2">
-          {article.slice(0, Math.ceil(articleLength / 2)).map((news,idx) => (
+          {article && article.slice(0, Math.ceil(articleLength / 2)).map((news,idx) => (
             <Link key={idx} href={news.url} className="h-auto">
               <NewsCard {...news} />
             </Link>
@@ -68,8 +73,8 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col w-full lg:w-1/2 gap-4">
-          {article.slice(Math.ceil(articleLength / 2), articleLength).map((news) => (
-            <Link key={news.title} href={news.url} className="h-auto">
+          {article && article.length < 0 ? <Spinner/> : article?.slice(Math.ceil(articleLength / 2), articleLength).map((news, idx) => (
+            <Link key={idx} href={news.url} className="h-auto">
               <NewsCard {...news} />
             </Link>
           ))}

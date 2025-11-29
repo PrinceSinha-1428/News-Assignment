@@ -1,11 +1,10 @@
 import { Facebook, Twitter, Youtube } from 'lucide-react';
 import Image from 'next/image';
-import React from 'react';
 
 const Footer = () => {
   return (
     <>
-    <div className='flex flex-row justify-around items-center'>
+    <div className='flex flex-row justify-around items-center '>
       <div>
         <Image src={'/logo.avif'} alt='logo' width={300} height={300}  />
       </div>

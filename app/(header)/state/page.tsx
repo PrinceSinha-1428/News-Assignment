@@ -1,9 +1,10 @@
-import React from 'react';
+import Hero from '@/components/Hero';
 
 const State = () => {
+
   return (
     <div>
-      State
+      <Hero/>
     </div>
   );
 }
