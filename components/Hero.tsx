@@ -1,10 +1,11 @@
 'use client';
 
 import  { useEffect, useState } from 'react';
-import Spinner from './Spinner';
 import Link from 'next/link';
 import NewsCard from './NewsCard';
 import { Trending } from '@/constants';
+import Spinner from './Spinner';
+import { useParams } from 'next/navigation';
 
 export interface NewsArticle {
   source: {
@@ -23,6 +24,8 @@ export interface NewsArticle {
 
 const Hero = () => {
 
+
+
    const [article, setArticle] = useState<NewsArticle[] | []>([]);
 
    const fetchNews = async () => {
@@ -36,7 +39,6 @@ const Hero = () => {
    },[])
 
    const articleLength = article.length;
-   console.log(articleLength)
 
   return (
    <div className="p-4">
@@ -68,8 +70,8 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col w-full lg:w-1/2 gap-4">
-          {article.slice(Math.ceil(articleLength / 2), articleLength).map((news) => (
-            <Link key={news.title} href={news.url} className="h-auto">
+          {article.length < 0 ? <Spinner/> : article.slice(Math.ceil(articleLength / 2), articleLength).map((news, idx) => (
+            <Link key={idx} href={news.url} className="h-auto">
               <NewsCard {...news} />
             </Link>
           ))}
