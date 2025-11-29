@@ -1,6 +1,6 @@
 'use client';
 
-import  { useEffect, useState } from 'react';
+import  { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import Link from 'next/link';
 import NewsCard from './NewsCard';
 import { Trending } from '@/constants';
@@ -19,7 +19,10 @@ export interface NewsArticle {
   urlToImage: string | null;
   publishedAt: string; 
   content: string | null;
+
 }
+
+
 
 
 const Hero = () => {
@@ -38,7 +41,7 @@ const Hero = () => {
       fetchNews();
    },[])
 
-   const articleLength = article.length;
+   const articleLength = article?.length;
 
   return (
    <div className="p-4">
@@ -62,7 +65,7 @@ const Hero = () => {
 
       <div className="flex flex-col lg:flex-row gap-4">
         <div className="flex flex-col w-full gap-4 lg:w-1/2">
-          {article.slice(0, Math.ceil(articleLength / 2)).map((news,idx) => (
+          {article && article.slice(0, Math.ceil(articleLength / 2)).map((news,idx) => (
             <Link key={idx} href={news.url} className="h-auto">
               <NewsCard {...news} />
             </Link>
@@ -70,7 +73,7 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col w-full lg:w-1/2 gap-4">
-          {article.length < 0 ? <Spinner/> : article.slice(Math.ceil(articleLength / 2), articleLength).map((news, idx) => (
+          {article && article.length < 0 ? <Spinner/> : article?.slice(Math.ceil(articleLength / 2), articleLength).map((news, idx) => (
             <Link key={idx} href={news.url} className="h-auto">
               <NewsCard {...news} />
             </Link>
